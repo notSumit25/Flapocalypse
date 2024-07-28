@@ -6,6 +6,7 @@ export class Bird {
     gravity: number;
     lift: number;
     radius: number;
+    // socketId: string;
 
     constructor(x: number, y: number) {
         this.x = x;
@@ -15,6 +16,7 @@ export class Bird {
         this.gravity = 0.6;
         this.lift = -15;
         this.radius = 12;
+        // this.socketId = '';
     }
 
     // Method to apply gravity to the bird
