@@ -35,6 +35,11 @@ export class Bird {
         this.velocity += this.lift;
     }
 
+    update() {
+        this.velocity += this.gravity;
+        this.y += this.velocity;
+    }
+
     // Method to check if the bird hits the ground or the ceiling
     checkBounds(height: number) {
         if (this.y > height - this.radius) {
@@ -47,11 +52,7 @@ export class Bird {
     }
 
     // Method to draw the bird (assuming a 2D rendering context is provided)
-    draw(context: CanvasRenderingContext2D) {
-        context.beginPath();
-        context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        context.fillStyle = "yellow";
-        context.fill();
-        context.stroke();
+    draw(context: CanvasRenderingContext2D, birdImage: HTMLImageElement) {
+        context.drawImage(birdImage, 50, this.y);
     }
 }
